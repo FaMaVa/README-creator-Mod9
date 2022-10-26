@@ -5,6 +5,7 @@ let badge;
 function renderLicenseBadge(license) {
   if (license === "MIT") {
     badge = `(https://img.shields.io/badge/License-MIT-yellow.svg)`;
+    console.log("MITTT");
     return badge;
   } else if (license === "APACHE 2.0") {
     badge = `(https://img.shields.io/badge/License-Apache_2.0-blue.svg)`;
@@ -20,8 +21,6 @@ function renderLicenseBadge(license) {
     return badge;
   };
 };
-
-renderLicenseBadge(data.license);
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -46,8 +45,6 @@ function renderLicenseLink(license) {
   }; 
 };
 
-renderLicenseLink(data.license);
-
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 let licenseSection;
@@ -55,14 +52,13 @@ let licenseSection;
 function renderLicenseSection(license) {
   if (license === "MIT" || license === "APACHE 2.0" || license === "GPL 3.0" || license === "BSD 3") {
     licenseSection = `![GitHub License]${badge}${link}`
+    console.log(licenseSection);
     return licenseSection;
   } else {
     licenseSection = ``;
     return licenseSection;
   };
 };
-
-renderLicenseSection(data.license);
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -117,4 +113,9 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = {
+  renderLicenseBadge,
+  renderLicenseLink,
+  renderLicenseSection,
+  generateMarkdown,
+};
