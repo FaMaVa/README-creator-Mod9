@@ -1,11 +1,9 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// A function that returns a license badge based on which license is passed in
 let badge;
 
 function renderLicenseBadge(license) {
   if (license === "MIT") {
     badge = `(https://img.shields.io/badge/License-MIT-yellow.svg)`;
-    console.log("MITTT");
     return badge;
   } else if (license === "APACHE 2.0") {
     badge = `(https://img.shields.io/badge/License-Apache_2.0-blue.svg)`;
@@ -22,8 +20,7 @@ function renderLicenseBadge(license) {
   };
 };
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// A function that returns the license link
 let link;
 
 function renderLicenseLink(license) {
@@ -45,14 +42,12 @@ function renderLicenseLink(license) {
   }; 
 };
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// A function that returns the license section of README
 let licenseSection;
 
 function renderLicenseSection(license) {
   if (license === "MIT" || license === "APACHE 2.0" || license === "GPL 3.0" || license === "BSD 3") {
-    licenseSection = `![GitHub License]${badge}${link}`
-    console.log(licenseSection);
+    licenseSection = `[![License]${badge}]${link}`
     return licenseSection;
   } else {
     licenseSection = ``;
@@ -60,11 +55,11 @@ function renderLicenseSection(license) {
   };
 };
 
-// TODO: Create a function to generate markdown for README
+// A function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
   
-  ${licenseSection}
+  ${licenseSection} 
   
   ## Description
 
@@ -95,7 +90,7 @@ function generateMarkdown(data) {
 
   This project is licensed under the ${data.license} license.
 
-  ##Contributing
+  ## Contributing
 
   ${data.contributing}
 
@@ -109,7 +104,7 @@ function generateMarkdown(data) {
 
   ## Questions
 
-  If you have any questions about the repo, open an issue or contact me directly at ${data.email}. You can find more of my work at ${data.github}.
+  If you have any questions about the repo, open an issue or contact me directly at ${data.email}. You can find more of my work at [${data.github}](https://github.com/${data.github}).
 `;
 }
 
